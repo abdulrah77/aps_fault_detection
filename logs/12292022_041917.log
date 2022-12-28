@@ -1,0 +1,37 @@
+[2022-12-29 04:19:18,283] 15 root -INFO ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Ingestion <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2022-12-29 04:19:18,284] 23 root -INFO -Exporting Collection data as Pandas Dataframe
+[2022-12-29 04:19:18,284] 16 root -INFO -Reading data from database:aps and collection: sensor
+[2022-12-29 04:19:21,811] 18 root -INFO -Found columns:Index(['_id', 'class', 'aa_000', 'ab_000', 'ac_000', 'ad_000', 'ae_000',
+       'af_000', 'ag_000', 'ag_001',
+       ...
+       'ee_002', 'ee_003', 'ee_004', 'ee_005', 'ee_006', 'ee_007', 'ee_008',
+       'ee_009', 'ef_000', 'eg_000'],
+      dtype='object', length=172)
+[2022-12-29 04:19:21,811] 20 root -INFO -Dropping column: _id
+[2022-12-29 04:19:22,007] 22 root -INFO -Row and columns in df:(36188, 171)
+[2022-12-29 04:19:22,007] 25 root -INFO -Save  data in feature store
+[2022-12-29 04:19:22,534] 34 root -INFO -save df to feature store folder
+[2022-12-29 04:19:24,887] 40 root -INFO -split dataset into train and test set
+[2022-12-29 04:19:25,443] 43 root -INFO -Creating dataset directory folder if not available
+[2022-12-29 04:19:25,444] 48 root -INFO -save df to feature store folder
+[2022-12-29 04:19:27,518] 57 root -INFO -Data ingestion artifact:DataIngestionArtifact(feature_store_file_path='/config/workspace/artifact/12292022_041918/data_ingestion/feature_store', train_file_path='/config/workspace/artifact/12292022_041918/data_ingestion/dataset/train.csv', test_file_path='/config/workspace/artifact/12292022_041918/data_ingestion/dataset/test.csv')
+[2022-12-29 04:19:27,953] 14 root -INFO ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Validation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2022-12-29 04:19:27,954] 106 root -INFO -Reading base dataframe
+[2022-12-29 04:19:30,812] 109 root -INFO -Replace na valuse in  base dataframe
+[2022-12-29 04:19:31,729] 39 root -INFO -selecting columns names which contains null values more than threshold 0.2
+[2022-12-29 04:19:31,730] 42 root -INFO -columns to drop :['ab_000', 'bk_000', 'bl_000', 'bm_000', 'bn_000', 'bo_000', 'bp_000', 'bq_000', 'br_000', 'cr_000']
+[2022-12-29 04:19:31,819] 112 root -INFO -dropped in  base dataframe
+[2022-12-29 04:19:31,819] 114 root -INFO -Reading train dataframe
+[2022-12-29 04:19:32,193] 116 root -INFO -Reading test dataframe
+[2022-12-29 04:19:32,291] 119 root -INFO -drop ull value colums in  train dataframe
+[2022-12-29 04:19:32,302] 39 root -INFO -selecting columns names which contains null values more than threshold 0.2
+[2022-12-29 04:19:32,303] 42 root -INFO -columns to drop :['ab_000', 'bk_000', 'bl_000', 'bm_000', 'bn_000', 'bo_000', 'bp_000', 'bq_000', 'br_000', 'cr_000']
+[2022-12-29 04:19:32,309] 121 root -INFO -drop ull value colums in  test dataframe
+[2022-12-29 04:19:32,313] 39 root -INFO -selecting columns names which contains null values more than threshold 0.2
+[2022-12-29 04:19:32,314] 42 root -INFO -columns to drop :['ab_000', 'bk_000', 'bl_000', 'bm_000', 'bn_000', 'bo_000', 'bp_000', 'bq_000', 'br_000', 'cr_000']
+[2022-12-29 04:19:39,110] 131 root -INFO -is all required columns present train dataframe
+[2022-12-29 04:19:39,110] 133 root -INFO -is all required columns present test dataframe
+[2022-12-29 04:19:39,110] 137 root -INFO -As all columns are avialable in train df hence detecting data drift 
+[2022-12-29 04:19:42,064] 140 root -INFO -As all columns are avialable in test df hence detecting data drift 
+[2022-12-29 04:19:43,296] 144 root -INFO -Write a report in yaml file
+[2022-12-29 04:19:43,337] 148 root -INFO -Data Validataion artifact:DataValidationArtifact(report_file_path='/config/workspace/artifact/12292022_041918/data_validation/report.yaml') 
