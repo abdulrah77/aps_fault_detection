@@ -1,4 +1,4 @@
-from sensor import utlis
+from sensor import utils
 from sensor.entity import config_entity
 from sensor.entity import artifact_entity
 from sensor.exception import SensorException
@@ -20,7 +20,7 @@ class DataIngestion:
     def inititate_data_ingestion(self)->artifact_entity.DataIngestionArtifact:
         try:
             logging.info(F"Exporting Collection data as Pandas Dataframe")
-            df:pd.DataFrame =  utlis.get_collection_as_dataframe(database_name= self.data_ingestion_config.database_name, collection_name= self.data_ingestion_config.collection_name)
+            df:pd.DataFrame =  utils.get_collection_as_dataframe(database_name= self.data_ingestion_config.database_name, collection_name= self.data_ingestion_config.collection_name)
             logging.info("Save  data in feature store")
 
             #replace na with NAN

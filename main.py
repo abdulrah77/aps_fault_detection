@@ -1,6 +1,6 @@
 from sensor.logger import logging
 from sensor.exception import SensorException
-from sensor.utlis import get_collection_as_dataframe
+from sensor.utils import get_collection_as_dataframe
 import sys, os
 from sensor.entity.config_entity import DataIngestionConfig
 from sensor.entity import config_entity
