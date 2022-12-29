@@ -7,6 +7,7 @@ import os,sys
 import pandas as pd
 from sensor import utils
 import numpy as np
+from sensor.config import TARGET_COLUMN
 class DataValidation:
 
     def __init__(self, data_validation_config: config_entity.DataValidationConfig, data_ingestion_artifact:artifact_entity.DataIngestionArtifact):
@@ -56,7 +57,7 @@ class DataValidation:
             
             base_columns = base_df.columns
             current_columns = current_df.columns
-            missing_columns= []
+            missing_columns= [TARGET_COLUMN]
             for base_column in base_columns:
                 if base_column not in current_columns:
                     logging.info(f"column :{base} is not available")
@@ -122,7 +123,7 @@ class DataValidation:
             test_df= self.drop_missing_values_columns(df=test_df, report_key_name="missing_values_within_test_Dataset")
 
 
-            exclude_columns= ["class"]
+            exclude_columns= []
             base_df= utils.convert_columns_float(df=base_df, exclude_columns=exclude_columns)
             train_df= utils.convert_columns_float(df=train_df, exclude_columns=exclude_columns)
             test_df= utils.convert_columns_float(df=test_df, exclude_columns=exclude_columns)
