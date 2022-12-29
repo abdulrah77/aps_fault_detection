@@ -25,6 +25,8 @@ class ModelTrainerArtifact:
     f1_test_score:str
 
 @dataclass()
-class ModelEvaluationArtifact:...
+class ModelEvaluationArtifact:
+    is_model_accepted:bool
+    improved_accuracy:float
 @dataclass()
 class ModelPusherArtifact:...
