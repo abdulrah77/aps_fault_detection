@@ -1,6 +1,4 @@
-# neurolab-mongo-python
 
-![image](https://user-images.githubusercontent.com/57321948/196933065-4b16c235-f3b9-4391-9cfe-4affcec87c35.png)
 
 ### Step 1 - Install the requirements
 
@@ -19,3 +17,13 @@ python main.py
 wget  https://raw.githubusercontent.com/avnyadav/sensor-fault-detection/main/aps_failure_training_set1.csv
 
 ```
+
+Problem Statement:
+The Air Pressure System (APS) is a critical component of a heavy-duty vehicle that
+uses compressed air to force a piston to provide pressure to the brake pads, slowing
+the vehicle down. The benefits of using an APS instead of a hydraulic system are the
+easy availability and long-term sustainability of natural air.
+This is a Binary Classification problem, in which the affirmative class indicates that the
+failure was caused by a certain component of the APS, while the negative class
+indicates that the failure was caused by something else.
+
